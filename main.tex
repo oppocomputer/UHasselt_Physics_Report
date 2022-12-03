@@ -1,10 +1,9 @@
 \documentclass{uhphysreport} 
 \usepackage{lipsum} % just for the demo, may be removed
+\usepackage{showframe}
 
-% Titles
+% Title
 \title{Title (bold)}
-\runningtitle{*Running title: \textit{Short title ($\mathit{< 50}$ characters inc. spaces, italic, leave empty if not needed)}}
-
 \course{Experimentele Technieken}
 \acyear{2022 - 2023}
 \major{$\mathit{2^{e}}$ bachelor FYS}
@@ -15,70 +14,28 @@
 \mentor{Mentor Name} 
 \promotor{Prof. Dr. Promotor J.}
 
-
-% START DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       START DOCUMENT       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 
 \thispagestyle{fancy}
-\section*{Samenvatting}
-Hier komt een samenvatting met een lengte van maximaal 1 bladzijde. 
-Hier is voorbeeldtekst: \lipsum[1-1]
+\input{Sections/0-Samenvatting}
 
 \cleardoublepage
 \tableofcontents
 \clearpage
 
-
-\section{Inleiding}
-Leid je project in, background, doel \& onderzoeksvragen, \dots 
-Zorg voor voldoende referenties zoals \cite{knuth:1984} \cite{latex2e}(Endnote/Mendeley/Zotero).
-
-\section{Theorie}
-Tussentitels zijn aangeraden per onderdeel (2.1, 2.2, \dots).
-Zijn er essentiele stukken theorie die noodzakelijk zijn om je verslag te begrijpen?
-
-\section{Experimentele opzet}
-Tussentitels per techniek (3.1, 3.2, \dots).
-Welke technieken zijn er gebruikt?
-Zorg dat je onderzoek repliceerbaar is (maar zonder overbodige details).
-
-\section{RESULTS}
-Tussentitels per topic/techniek (4.1, 4.1.1, \dots).
-Beschrijf de resultaten (interpreteer ze nog niet), wat zie je (objectief)?
-Zorg dat figuren een caption hebben (incl. alle afkortingen) onder de figuur en dat je zeker in de tekst refereert naar desbetreffende figuur. 
-Tabellen krijgen een caption bovenaan (zelfde principe).
-
-\section{DISCUSSION}
-Tussentitels aangeraden.
-Beschrijf welke conclusies er getrokken kunnen worden uit je resultaten. 
-Leg linken (zowel tussen je eigen resultaten als dingen die je vindt in de literatuur).
-\npar
-Ook hier is extra voorbeeldtext: \lipsum[1-1]
-
-\section{CONCLUSION}
-Kort en bondig, wat leren we hier uit? 
-Wat is de outlook?
-
-
-\textit{Author contributions} -- \textbf{Who did what?} 
-JH and JdR conceived and designed the research. 
-JH and BvH performed experiments and data analysis. 
-EvS and DD provided assistance with FLIM-FRET. JH and JdR wrote the paper. 
-All authors carefully edited the manuscript.
-
-\textit{Acknowledgements} -- \textbf{Who helped you? Who do you want to thank.} 
-F.E. BvH acknowledges the agency for Innovation by Science and Technology (IWT Flanders) for his doctoral fellowship. 
-JH is grateful for a postdoctoral scholarship from the Research Foundation Flanders (FWO Vlaanderen). 
-Prof. Em. Yves Engelborghs is thanked for providing access to the confocal microscope. 
-Research was funded by grants from the BOF KU Leuven, FWO, and EU (FP7 CHAARM).
-
-\clearpage
-\input{word_single}
-\clearpage
+\input{Sections/1-Inleiding}
+\input{Sections/2-Theorie}
+\input{Sections/3-Experimentele}
+\input{Sections/4-Resultaten}
+\input{Sections/5-Besluit}
+\input{Sections/6-Erkenning}
 
 \vspace{0.5cm}
-\printbibliography[title={REFERENCES}]
+\printbibliography[heading=bibintoc,title={Literatuur}]
 \newpage
 
 

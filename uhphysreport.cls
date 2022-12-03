@@ -18,12 +18,13 @@
 \RequirePackage{titlesec} % to add a dot after section number
 \RequirePackage{fancyhdr} % easy header and footer
 \RequirePackage{mathptmx} % Times New Roman font
-\RequirePackage{sectsty} % font sizes of (sub)sections
 \RequirePackage{titlecaps}% http://ctan.org/pkg/titlecaps
 \RequirePackage{parskip} % blank space (single line) between paragraphs
 \RequirePackage{setspace} % for setstretch command (line spacing)
 \RequirePackage[export]{adjustbox}
 \RequirePackage{emptypage}
+% Open Sans font is easier to read
+\RequirePackage[default,oldstyle]{opensans}
 
 % Good defaults to have
 \RequirePackage{graphicx} % import images
@@ -33,6 +34,7 @@
 \RequirePackage{physics}
 
 % References and links (these should be last and in this order)
+\RequirePackage{csquotes}
 \RequirePackage{biblatex}
 \RequirePackage[colorlinks=true, linktoc=all]{hyperref}
 \RequirePackage[noabbrev,dutch]{cleveref}
@@ -41,7 +43,6 @@
 %       New Elements       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand*{\course}[1]{\gdef\thecourse{#1}}
-\newcommand*{\runningtitle}[1]{\gdef\therunningtitle{#1}}
 \newcommand*{\major}[1]{\gdef\themajor{#1}}
 \newcommand*{\acyear}[1]{\gdef\theacyear{#1}}
 \newcommand*{\mentor}[1]{\gdef\thementor{#1}}
@@ -52,26 +53,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
 \fancyhf{}
-\setlength{\headheight}{42pt}
-\setlength{\textheight}{524pt}
 \rhead{\hspace*{1cm}\vspace*{0.05cm}\textit{\thecourse ~-~ \themajor}}
 \lhead{\includegraphics[width=0.25\textwidth]{Figures/Logos/logo_uhasselt.png}}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
+% For open sans use:
+\setlength{\headheight}{30pt}
+\setlength{\textheight}{564pt}
+% % For the default font use:
+% \setlength{\headheight}{42pt}
+% \setlength{\textheight}{524pt}
 
 
-\sectionfont{\fontsize{11}{10}\selectfont} % the font size for (sub)sections and the spacings
-
-% Puts a dot in the section number, avoids it in references
-\makeatletter
-\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad}
-\makeatother
-
-% Edit spacing defaults
-\titlespacing{\section}{0pt}{2ex}{0ex} % this one is important, especially last box
-\titlespacing{\subsection}{0pt}{1ex}{0ex}
-\titlespacing{\subsubsection}{0pt}{0.5ex}{0ex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Functional Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\numberlesssection}[1]{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}
+}
 
 % Shorthand for new paragraph
 \newcommand{\npar}{\par\medskip} 
@@ -93,7 +94,7 @@
         
         \vfill
         \begin{center}
-                {\LARGE \selectfont\textbf{\textsf{\thecourse}}} \\
+                {\Large \selectfont\textit{\textsf{\thecourse}}} \\
                 \Huge \textbf{\@title} \\
         \end{center}
         
