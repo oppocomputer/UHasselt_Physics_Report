@@ -3,16 +3,25 @@
 
 % Declares itself
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uhphysreport}[2022/11/27 This class is for reports written in LaTeX in the physics department at Hasselt university]
+\ProvidesClass{uhphysreport}[2022/12/04 This class is for student reports written in LaTeX in the physics department at Hasselt university]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%    Class definitions     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pass remaining options to the article class
+\DeclareOption{twocolumn}{\OptionNotUsed}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
+
+% The custom class builds on the article class
+\LoadClass[12pt, a4paper]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         Packages         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\LoadClass[12pt, a4paper, twoside]{article}
-
 %% Language package
 \RequirePackage[dutch]{babel}
-
 
 % Aesthetics, layout and font
 \RequirePackage{titlesec} % to add a dot after section number
@@ -38,6 +47,7 @@
 \RequirePackage{biblatex}
 \RequirePackage[colorlinks=true, linktoc=all]{hyperref}
 \RequirePackage[noabbrev,dutch]{cleveref}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %       New Elements       %
