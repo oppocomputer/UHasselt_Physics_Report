@@ -97,16 +97,16 @@
     \begin{titlepage}
         \thispagestyle{empty}
         \begin{minipage}[b]{\textwidth}
-            % Logo of the faculty in question
             \includegraphics[width=6cm, right]{Figures/Logos/logo_uhasselt.png}
             \flushright \Large Academiejaar \theacyear \\
         \end{minipage}
         
         \vfill
-        \begin{center}
-                {\Large \selectfont\textit{\textsf{\thecourse}}} \\
-                \Huge \textbf{\@title} \\
-        \end{center}
+        \begin{minipage}{\textwidth}
+            \centering
+            {\Large \selectfont\textit{\textsf{\thecourse}}} \\
+            \Huge \textbf{\@title} \\
+        \end{minipage}
         
         \vfill
         \begin{minipage}{\textwidth}
