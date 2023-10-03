@@ -64,6 +64,7 @@
 \newcommand*{\promotor}[1]{\ifx\empty#1\empty  \else \gdef\thepromotor{\textbf{Promotor(s):} \\ #1} \fi
 }
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definition of the header %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,11 +121,9 @@
                 \large 
                 \textbf{Auteur(s):} \\ \@author 
                 \npar
-                % \textbf{Begeleider(s):} \\ 
                 \thementor 
                 \npar
-                % \textbf{Promotor(s):} \\ 
-                \thepromotor
+                \thepromotor 
         \end{minipage}
     \end{titlepage}
     \cleardoublepage
