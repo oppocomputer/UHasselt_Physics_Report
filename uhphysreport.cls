@@ -55,8 +55,14 @@
 \newcommand*{\course}[1]{\gdef\thecourse{#1}}
 \newcommand*{\major}[1]{\gdef\themajor{#1}}
 \newcommand*{\acyear}[1]{\gdef\theacyear{#1}}
-\newcommand*{\mentor}[1]{\gdef\thementor{#1}}
-\newcommand*{\promotor}[1]{\gdef\thepromotor{#1}}
+
+\newcommand*{\thementor}{}
+\newcommand*{\mentor}[1]{\ifx\empty#1\empty  \else \gdef\thementor{\textbf{Begeleider(s):} \\ #1} \fi
+}
+
+\newcommand*{\thepromotor}{}
+\newcommand*{\promotor}[1]{\ifx\empty#1\empty  \else \gdef\thepromotor{\textbf{Promotor(s):} \\ #1} \fi
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definition of the header %
@@ -114,9 +120,11 @@
                 \large 
                 \textbf{Auteur(s):} \\ \@author 
                 \npar
-                \textbf{Begeleider(s):} \\ \thementor 
+                % \textbf{Begeleider(s):} \\ 
+                \thementor 
                 \npar
-                \textbf{Promotor(s):} \\ \thepromotor
+                % \textbf{Promotor(s):} \\ 
+                \thepromotor
         \end{minipage}
     \end{titlepage}
     \cleardoublepage
