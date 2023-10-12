@@ -44,7 +44,7 @@
 
 % References and links (these should be last and in this order)
 \RequirePackage{csquotes}
-\RequirePackage{biblatex}
+\RequirePackage[style=numeric-comp,sorting=none]{biblatex}
 \RequirePackage[colorlinks=true, linktoc=all]{hyperref}
 \RequirePackage[noabbrev,dutch]{cleveref}
 
@@ -63,6 +63,10 @@
 \newcommand*{\thepromotor}{}
 \newcommand*{\promotor}[1]{\ifx\empty#1\empty  \else \gdef\thepromotor{\textbf{Promotor(s):} \\ #1} \fi
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modifications or default settings %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
