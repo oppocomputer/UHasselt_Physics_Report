@@ -32,6 +32,7 @@
 \RequirePackage{setspace} % for setstretch command (line spacing)
 \RequirePackage[export]{adjustbox}
 \RequirePackage{emptypage}
+\RequirePackage{enumitem}
 % Open Sans font is easier to read
 \RequirePackage[default,oldstyle]{opensans}
 
@@ -40,6 +41,7 @@
 
 % Math and physics packages ... you will need them
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage{physics}
 
 % References and links (these should be last and in this order)
@@ -64,10 +66,16 @@
 \newcommand*{\promotor}[1]{\ifx\empty#1\empty  \else \gdef\thepromotor{\textbf{Promotor(s):} \\ #1} \fi
 }
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Modifications or default settings %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New command for checkable box symbol
+\newcommand{\checkeditem}{\item[$\text{\rlap{$\checkmark$}}\square$]}
 
+% Define new itemize environment using the checkable box as label
+\newlist{checklist}{itemize}{1}
+\setlist[checklist]{label=$\square$}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definition of the header %
